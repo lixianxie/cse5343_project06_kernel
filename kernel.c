@@ -4,7 +4,7 @@
 
 
 int main(){
-	putInMemory(0xB000,0x8000,'H');
+/*	putInMemory(0xB000,0x8000,'H');
 	putInMemory(0xB000,0x8001,0x7);
 	putInMemory(0xB000,0x8002,'e');
 	putInMemory(0xB000,0x8003,0x7);
@@ -25,7 +25,15 @@ int main(){
 	putInMemory(0xB000,0x8012,'l');
 	putInMemory(0xB000,0x8013,0x7);
 	putInMemory(0xB000,0x8014,'d');
-	putInMemory(0xB000,0x8015,0x7);
+	putInMemory(0xB000,0x8015,0x7);*/
+	char str[100]="Hello World";
+	int i=0;
+	while(str[i]!='\0'){
+		putInMemory(0xB000,32768+2*i,str[i]); //32768=0x8000
+		putInMemory(0xB000,32769+2*i,0x7);
+		i++;
+	}
+
 	while(1){
 		//todo
 	}
